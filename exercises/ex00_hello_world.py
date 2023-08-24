@@ -1,4 +1,4 @@
-" " "My first program for COMPP110"
+"""My first program for COMPP110"""
 
 print("Hello to this wonderful world")
 
