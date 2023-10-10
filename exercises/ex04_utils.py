@@ -9,8 +9,6 @@ def all(x: list[int], y: int) -> bool:
         while idx < len(x):
             if x[idx] == y:
                 counter += 1
-            else:
-                counter == counter 
             idx += 1
     if counter == len(x):
         value = True
