@@ -1,4 +1,4 @@
-"""One Shot Wordle. """
+"""One Shot Wordle."""
 
 __author__ = "730656379"
 
@@ -8,9 +8,9 @@ word_guess: str = input(f"What is your {len(secret)}-letter guess? ")
 
 # prints this if the word length isn't the same as the secret variable's word length
 while len(word_guess) != len(secret):
-    word_guess = str(input(f"That was not {len(secret)} letters! Try again: " ))
+    word_guess = str(input(f"That was not {len(secret)} letters! Try again: "))
 
-#emojis
+# emojis
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
@@ -42,8 +42,6 @@ print(emoji_string)
 # the guess is wrong
 if word_guess != secret:
     print("Not quite. Play again soon!")
-    exit()
 # guess is right
 else:
     print("Woo! You got it!")
-
