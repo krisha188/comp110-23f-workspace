@@ -1,6 +1,7 @@
 """Lists."""
 __author__ = "730656379"
 
+
 def all(x: list[int], y: int) -> bool:
     """Shows if all values in the string equal the value of the integer."""
     if len(x) == 0:
@@ -17,6 +18,7 @@ def all(x: list[int], y: int) -> bool:
         value = True
     return value
 
+
 def max(x: list[int]) -> int:
     """Shows the max value in the list."""
     if len(x) == 0:
@@ -28,6 +30,7 @@ def max(x: list[int]) -> int:
             max = x[idx]
         idx += 1
     return max 
+
 
 def is_equal(x: list[int], y: list[int]) -> bool:
     """Shows if the two lists equal each other."""
@@ -43,5 +46,3 @@ def is_equal(x: list[int], y: list[int]) -> bool:
         return True
     else: 
         return False
-    
-print(all([], 5))
