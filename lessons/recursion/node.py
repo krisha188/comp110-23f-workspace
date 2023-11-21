@@ -22,11 +22,25 @@ class Node:
         else:
             return f"{self.data} -> {self.next}"
         
-    def head(self):
-        return None
+    def head(self) -> int:
+        """Returns data from the first element in the list, and int if its not."""
+        if self.next is not None:
+            return int(self.data)
+        else:
+            return int(self.data)
     
-    def tail(self):
-        return None
+    def tail(self) -> Node | None:
+        """Returns a not object for every element minus head."""
+        if self.data is not None and self.next is not None:
+            new_list = Node(self.data, self.next)
+            new_list = self.next
+            return new_list
+        else:
+            return None
     
-    def last(self):
-        return None
+    def last(self) -> int:
+        """Returns int for everything except the last element in a linked list, then it returns data."""
+        if self.next is None:
+            return self.data
+        else:
+            return self.next.last()
