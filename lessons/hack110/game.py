@@ -1,12 +1,14 @@
 import pygame, sys
-import random
+import random 
 
 size = width, height = 640, 480
 screen = pygame.display.set_mode(size)
 
-blue = (51, 153, 255)
-red = (240, 20, 20)
-gold = (255, 204, 0)
+
+
+LIGHT_BLUE = (51, 153, 255)
+RED = (240, 20, 20)
+GOLD = (255, 284, 0)
 
 pygame.init()
 
@@ -14,7 +16,7 @@ clock = pygame.time.Clock()
 
 player = pygame.Rect(5, height/2, 100, 100)
 
-obstacle_top = pygame.Rect(0, -25, width, height/2)
+obstacle_top = pygame.Rect(0, -100, width, height/2)
 obstacle_bottom = pygame.Rect(0, height/2 + 150, width, height/2)
 
 obstacle_list = [obstacle_top, obstacle_bottom]
@@ -25,29 +27,29 @@ running = True
 
 pygame.mouse.set_visible(False)
 
-colission_count = 0
+collision_count = 0
 coin_count = 0
 
-while running:
+while running: 
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
             running = False
 
-    screen.fill(blue)
+    screen.fill(LIGHT_BLUE)
 
-    pygame.draw.circle(screen, gold, goal)
-
-    pygame.draw.rect(screen, red, player)
-    pygame.draw.rect(screen, red, obstacle_top)
-    pygame.draw.rect(screen, red, obstacle_bottom)
+    pygame.draw.rect(screen, RED, player)
+    pygame.draw.rect(screen, RED, obstacle_top)
+    pygame.draw.rect(screen, RED, obstacle_bottom)
+    pygame.draw.circle(screen, GOLD, goal)
+    pygame.draw.circle()
 
     for obstacle in obstacle_list:
         if player.colliderect(obstacle):
             pygame.mouse.set_pos(5, height/2)
-            colission_count += 1
-            if colission_count == 100:
+            collision_count += 1
+            if collision_count == 100:
                 running = False
-
+  
     if player.colliderect(goal):
         coin_count += 1
         goal.centerx = random.randint(75, width - 75)
